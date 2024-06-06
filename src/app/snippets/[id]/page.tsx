@@ -4,6 +4,7 @@ import { notFound } from "next/navigation";
 import Link from "next/link";
 import * as actions from "@/actions/actions";
 import { Button } from "@/components/ui/button";
+import CopyToClipboardButton from "@/components/CopyToClipboard";
 import Image from "next/image";
 interface SnippetShowPageProps {
   params: {
@@ -38,6 +39,8 @@ async function SnippetShowPage(props: SnippetShowPageProps) {
         </div>
       </div>
       <pre className="p-3 border rounded bg-gray-200 border-gray-200 overflow-auto mt-10">
+        <CopyToClipboardButton snippet={snippet} />
+
         <code>{snippet.code}</code>
       </pre>
 
